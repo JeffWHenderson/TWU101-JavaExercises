@@ -20,10 +20,14 @@ public class Main {
         monsters.add(orc1);
         monsters.add(troll1);
 
-        monsters.get(0).takeDamage(10);
-        monsters.get(1).takeDamage(10);
+        // damage all monsters
+        for(int i =0; i < monsters.size(); i++) {
+            monsters.get(i).takeDamage(10);
+        }
 
-        monsters.get(0).reportStatus();
-        monsters.get(1).reportStatus();
+        // report the current health points after damaging the monsters
+        for(Monster monster: monsters) {
+            monster.reportStatus();
+        }
     }
 }

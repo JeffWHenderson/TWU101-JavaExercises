@@ -1,13 +1,16 @@
 package com.thoughtworks.tw101.exercises.exercise6;
 
 public class Troll implements Monster {
+    private int hp = 40;
+    private String name = "Troll";
+
     @Override
     public void takeDamage(int amount) {
-        System.out.println("need hp variable and subtract damage taken");
+        hp -= amount / 2;
     }
 
     @Override
     public void reportStatus() {
-        System.out.println("prints name and current hp");
+        System.out.println(name + ": " + hp + "hp");
     }
 }
