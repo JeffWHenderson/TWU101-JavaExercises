@@ -32,6 +32,21 @@ public class FizzBuzz {
     }
 
     private static void fizzBuzz() {
+        for(int i = 1; i <= 100; i++){
+            //        Create a fizzBuzz() method that prints out the numbers 1 through 100.
+//        Instead of numbers divisible by three print "Fizz".
+//        Instead of numbers divisible by five print "Buzz".
+//        Instead of numbers divisible by three and five print "FizzBuzz".
+
+            if(i % 3 == 0 && i % 5 == 0 )
+                System.out.println("FizzBuzz");
+            else if (i % 3 == 0)
+                System.out.println("Fizz");
+            else if (i % 5 == 0)
+                System.out.println("Buzz");
+            else
+                System.out.println(i);
+        }
 
     }
 }
