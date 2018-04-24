@@ -12,8 +12,19 @@ public class DiamondExercises {
 //              *
 //             ***
 //            *****
-    private static void drawAnIsoscelesTriangle(int n) {
 
+    private static void drawAnIsoscelesTriangle(int n) {
+        // n1=1  n2=3 n3=5 n4=7 n5=9  -----> pattern n*2 1   ///// n1=3(' ') n2=2 n3=1' ' n4=0 ----> pattern(indexOfN - i) * " ";
+
+        //      repeat(indexOfN - i) " ";
+        //      repeat( n*2 - 1 ) "*";
+        //      repeat(indexOfN - i) " ";
+
+         for(int i = 0; i < n; i++) {
+             System.out.print(repeatStringXTimes(" ", (n -1) - i));
+             System.out.print(repeatStringXTimes("*", (i+1)*2 -1));
+             System.out.println(repeatStringXTimes(" ", (n -1) - i)); // this is totally not needed... check requirements since empty space is empty with or without this
+         }
     }
 
 //    Diamond
@@ -24,7 +35,32 @@ public class DiamondExercises {
 //             ***
 //              *
     private static void drawADiamond(int n) {
-
+        for (int i = 0; i < (n * 2) - 1; i++) {
+            if (i < n) {
+                System.out.print(repeatStringXTimes(" ", (n - 1) - i));
+                System.out.print(repeatStringXTimes("*", (i + 1) * 2 - 1));
+                System.out.println(repeatStringXTimes(" ", (n - 1) - i));
+            }
+//            else
+//            {
+//                System.out.print(repeatStringXTimes(" ", (i - n) +1));
+//                System.out.print(repeatStringXTimes("*",  -(i - 1 - 2 * n)));
+//                System.out.print((i - 1 - 2 * n) - 2);
+//                System.out.println(repeatStringXTimes(" ", (i - n) +1));
+//
+//                // i+1(9) - -16 == 7 need 11
+//                // i+1(10) - -16 == 2 needs 9
+//                //    (11) - -16 == 3 needs 7
+//                //    16 - 8 == 8
+//            }
+        }
+        for (int i = n; i > 0; i--) {
+            if (i < n) {
+                System.out.print(repeatStringXTimes(" ", (n) - i));
+                System.out.print(repeatStringXTimes("*", (i) * 2 - 1));
+                System.out.println(repeatStringXTimes(" ", (n - 1) - i)); // may not need this
+            }
+        }
     }
 
 //    Diamond with Name
@@ -37,5 +73,9 @@ public class DiamondExercises {
 //             *
     private static void drawADiamondWithYourName(int n) {
 
+    }
+
+    private static String repeatStringXTimes(String str, int times) {
+        return new String(new char[times]).replace("\0", str);
     }
 }
