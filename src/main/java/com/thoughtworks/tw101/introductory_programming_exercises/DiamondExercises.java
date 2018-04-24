@@ -72,6 +72,23 @@ public class DiamondExercises {
 //            ***
 //             *
     private static void drawADiamondWithYourName(int n) {
+        for (int i = 0; i < (n * 2) - 1; i++) {
+            if (i < n -1) {
+                System.out.print(repeatStringXTimes(" ", (n - 1) - i));
+                System.out.print(repeatStringXTimes("*", (i + 1) * 2 - 1));
+                System.out.println(repeatStringXTimes(" ", (n - 1) - i));
+            }
+            if (i == n - 1) {
+                System.out.println("JEFF");
+            }
+        }
+        for (int i = n; i > 0; i--) {
+            if (i < n) {
+                System.out.print(repeatStringXTimes(" ", (n) - i));
+                System.out.print(repeatStringXTimes("*", (i) * 2 - 1));
+                System.out.println(repeatStringXTimes(" ", (n - 1) - i)); // may not need this
+            }
+        }
 
     }
 
