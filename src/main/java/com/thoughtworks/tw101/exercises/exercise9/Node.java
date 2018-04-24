@@ -40,10 +40,11 @@ public class Node {
     private void populateNames(List<String> names) {
         if(nodeLeft != null)
             nodeLeft.populateNames(names);
-
         names.add(name);
 
         if(nodeRight != null)
             nodeRight.populateNames(names);
+
+
      }
 }
