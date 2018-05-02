@@ -1,7 +1,7 @@
 package com.thoughtworks.tw101.exercises.exercise2;
 
 public class Accumulator {
-    private int counter; // no need for getters or setter yet
+    private int counter;
 
     public void increment() {
         counter++;

@@ -7,12 +7,14 @@ public class Main {
     public static void main(String[] args) {
         Accumulator accumulator = new Accumulator();
 
-        // call the method increment() 5 times
+        incrementAccumulatorXTimes(5, accumulator);
+
+        accumulator.total();
+    }
+
+    public static void incrementAccumulatorXTimes(int x, Accumulator accumulator) {
         for(int i = 0; i < 5; i++) {
             accumulator.increment();
         }
-
-        // total() prints out the number of times increment was called
-        accumulator.total();
     }
 }
