@@ -14,16 +14,15 @@ public class DiamondExercises {
 //            *****
 
     private static void drawAnIsoscelesTriangle(int n) {
-        // n1=1  n2=3 n3=5 n4=7 n5=9  -----> pattern n*2 1   ///// n1=3(' ') n2=2 n3=1' ' n4=0 ----> pattern(indexOfN - i) * " ";
-
-        //      repeat(indexOfN - i) " ";
-        //      repeat( n*2 - 1 ) "*";
-        //      repeat(indexOfN - i) " ";
+        int numOfSpaces = n - 1;
+        int numOfStars = 1;
 
          for(int i = 0; i < n; i++) {
-             System.out.print(repeatStringXTimes(" ", (n -1) - i));
-             System.out.print(repeatStringXTimes("*", (i+1)*2 -1));
-             System.out.println(repeatStringXTimes(" ", (n -1) - i)); // this is totally not needed... check requirements since empty space is empty with or without this
+             System.out.print(repeatStringXTimes(" ", numOfSpaces));
+             System.out.println(repeatStringXTimes("*", numOfStars));
+
+             numOfSpaces--;
+             numOfStars += 2;
          }
     }
 
