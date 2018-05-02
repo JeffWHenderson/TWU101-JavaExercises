@@ -44,7 +44,6 @@ public class TriangleExercises {
     private static void drawARightTriangle(int n) {
         for(int i = 0; i < n; i++)
             System.out.println(repeatStringXTimes("*", i + 1));
-
     }
 
     private static String repeatStringXTimes(String str, int times) {
