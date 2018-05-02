@@ -18,8 +18,9 @@ public class DiamondExercises {
         int numOfStars = 1;
 
          for(int i = 0; i < n; i++) {
-             System.out.print(repeatStringXTimes(" ", numOfSpaces));
-             System.out.println(repeatStringXTimes("*", numOfStars));
+             printCharacterXTimes(" ", numOfSpaces);
+             printCharacterXTimes("*", numOfStars);
+             System.out.println();
 
              numOfSpaces--;
              numOfStars += 2;
@@ -34,31 +35,28 @@ public class DiamondExercises {
 //             ***
 //              *
     private static void drawADiamond(int n) {
-        for (int i = 0; i < (n * 2) - 1; i++) {
-            if (i < n) {
-                System.out.print(repeatStringXTimes(" ", (n - 1) - i));
-                System.out.print(repeatStringXTimes("*", (i + 1) * 2 - 1));
-                System.out.println(repeatStringXTimes(" ", (n - 1) - i));
+        int numOfSpaces = n - 1;
+        int numOfStars = 1;
+
+        for (int i = 0; i < n; i++) {
+
+            printCharacterXTimes(" ", numOfSpaces);
+            printCharacterXTimes("*", numOfStars);
+            System.out.println();
+
+            if(n - 1 != i) {
+                numOfSpaces--;
+                numOfStars += 2;
             }
-//            else
-//            {
-//                System.out.print(repeatStringXTimes(" ", (i - n) +1));
-//                System.out.print(repeatStringXTimes("*",  -(i - 1 - 2 * n)));
-//                System.out.print((i - 1 - 2 * n) - 2);
-//                System.out.println(repeatStringXTimes(" ", (i - n) +1));
-//
-//                // i+1(9) - -16 == 7 need 11
-//                // i+1(10) - -16 == 2 needs 9
-//                //    (11) - -16 == 3 needs 7
-//                //    16 - 8 == 8
-//            }
+
         }
         for (int i = n; i > 0; i--) {
-            if (i < n) {
-                System.out.print(repeatStringXTimes(" ", (n) - i));
-                System.out.print(repeatStringXTimes("*", (i) * 2 - 1));
-                System.out.println(repeatStringXTimes(" ", (n - 1) - i)); // may not need this
-            }
+            numOfStars -= 2;
+            numOfSpaces++;
+
+            printCharacterXTimes(" ", numOfSpaces);
+            printCharacterXTimes("*", numOfStars);
+            System.out.println();
         }
     }
 
@@ -91,7 +89,27 @@ public class DiamondExercises {
 
     }
 
+        // this will be removed and print charXTimes will replace it.
     private static String repeatStringXTimes(String str, int times) {
         return new String(new char[times]).replace("\0", str);
     }
+
+    private static void printCharacterXTimes(String str, int times) {
+        StringBuilder stringBuilder = new StringBuilder();
+
+        for(int i = 0; i < times; i++) {
+            stringBuilder.append(str);
+        }
+
+        System.out.print(stringBuilder);
+    }
 }
+
+
+//        for (int i = n; i > 0; i--) {
+//                if (i < n) {
+//        System.out.print(repeatStringXTimes(" ", (n) - i));
+//        System.out.print(repeatStringXTimes("*", (i) * 2 - 1));
+//        System.out.println(repeatStringXTimes(" ", (n - 1) - i)); // may not need this
+//        }
+//        }
