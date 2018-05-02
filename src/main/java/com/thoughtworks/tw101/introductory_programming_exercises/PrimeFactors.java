@@ -10,36 +10,32 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class PrimeFactors {
-    private static List<Integer> primes;
+    private static List<Integer> primes = new ArrayList();
 
     public static void main(String[] args) {
+        generate(30);
         generate(1);
-        List<Integer> primeFactors = generate(30);
-
-        System.out.print(primes.toString());
+        generate(100);
     }
 
-    private static List<Integer> generate(int n) {
-        List<Integer> primeFactors = new ArrayList<Integer>();
+    private static void generate(int n) {
+        int originalNumber = n;
+        primes.clear();
 
-        generate(n, primeFactors);
+        for(int i = 2; i < n; i++) {
+            while(n % i == 0) {
+                primes.add(i);
+                n /= i;
+            }
+        }
+        if(n != 1)
+            primes.add(n);
 
-        return primeFactors;
+        printPrimeMessage(originalNumber);
     }
 
-    private static void generate(int n, List<Integer> primeFactors) {
-        if(n % 2 == 0) {
-            primeFactors.add(2);
-            generate(n / 2, primeFactors);
-        }
-        else if(n % 3 == 0) {
-            primeFactors.add(3);
-            generate(n / 3, primeFactors);
-        }
-        else if(n % 5 == 0) {
-            primeFactors.add(5);
-            generate(n / 5, primeFactors);
-        }
-        primes = primeFactors;
+    private static void printPrimeMessage(int originalNumber) {
+        System.out.println("Primes for " + originalNumber + ": " + primes.toString());
     }
+
 }
