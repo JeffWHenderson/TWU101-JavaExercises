@@ -96,14 +96,14 @@ public class DiamondExercises {
 
     }
 
-    private static void printCharacterXTimes(String str, int times) {
-        StringBuilder stringBuilder = new StringBuilder();
+    private static void printCharacterXTimes(String str, int numOfTimes) {
+        StringBuilder repeatedCharacter = new StringBuilder();
 
-        for(int i = 0; i < times; i++) {
-            stringBuilder.append(str);
+        for(int i = 0; i < numOfTimes; i++) {
+            repeatedCharacter.append(str);
         }
 
-        System.out.print(stringBuilder);
+        System.out.print(repeatedCharacter);
     }
 }
 
