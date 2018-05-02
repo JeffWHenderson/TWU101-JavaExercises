@@ -16,17 +16,11 @@ public class Main {
         Troll troll1 = new Troll();
 
         ArrayList<Monster> monsters = new ArrayList<Monster>();
-
         monsters.add(orc1);
         monsters.add(troll1);
 
-        // damage all monsters
-        for(int i =0; i < monsters.size(); i++) {
-            monsters.get(i).takeDamage(10);
-        }
-
-        // report the current health points after damaging the monsters
         for(Monster monster: monsters) {
+            monster.takeDamage(10);
             monster.reportStatus();
         }
     }
